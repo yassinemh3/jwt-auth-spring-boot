@@ -46,13 +46,13 @@ This project demonstrates the implementation of security using **Spring Boot 3.4
     docker-compose up
    ```
 3. **Build the project**
-  ```bash
-  mvn clean install
-  ```
+     ```bash
+     mvn clean install
+     ```
 4. **Run the application**
-  ```bash
-  mvn spring-boot:run
-  ```
+     ```bash
+     mvn spring-boot:run
+     ```
 ## Roles & Permissions
 
 ### Roles
@@ -78,48 +78,48 @@ This project demonstrates the implementation of security using **Spring Boot 3.4
 
 ##API Usage Examples
 1. **Register User**
-```bash
-POST http://localhost:8080/api/v1/auth/register
-Content-Type: application/json
-
-{
-  "firstname": "user",
-  "lastname": "1",
-  "email": "user1@mail.com",
-  "password": "password",
-  "role": "ADMIN"
-}
-```
+   ```bash
+   POST http://localhost:8080/api/v1/auth/register
+   Content-Type: application/json
+   
+   {
+     "firstname": "user",
+     "lastname": "1",
+     "email": "user1@mail.com",
+     "password": "password",
+     "role": "ADMIN"
+   }
+   ```
 2. **Login Again and Update Token**
-```bash
-POST http://localhost:8080/api/v1/auth/authenticate
-Content-Type: application/json
-
-{
-  "email": "user@mail.com",
-  "password": "newPassword"
-}
-```
+   ```bash
+   POST http://localhost:8080/api/v1/auth/authenticate
+   Content-Type: application/json
+   
+   {
+     "email": "user@mail.com",
+     "password": "newPassword"
+   }
+   ```
 3. **Change the Password**
-```bash
-PATCH http://localhost:8080/api/v1/users
-Content-Type: application/json
-Authorization: Bearer {{auth-token}}
-
-{
-  "currentPassword": "password",
-  "newPassword": "newPassword",
-  "confirmationPassword": "newPassword"
-}
-```
+   ```bash
+   PATCH http://localhost:8080/api/v1/users
+   Content-Type: application/json
+   Authorization: Bearer {{auth-token}}
+   
+   {
+     "currentPassword": "password",
+     "newPassword": "newPassword",
+     "confirmationPassword": "newPassword"
+   }
+   ```
 4. **Create a New Book**
-```bash
-POST http://localhost:8080/api/v1/books
-Authorization: Bearer {{auth-token}}
-Content-Type: application/json
-
-{
-  "author": "user1",
-  "isbn": "12345"
-}
-```
+   ```bash
+   POST http://localhost:8080/api/v1/books
+   Authorization: Bearer {{auth-token}}
+   Content-Type: application/json
+   
+   {
+     "author": "user1",
+     "isbn": "12345"
+   }
+   ```
